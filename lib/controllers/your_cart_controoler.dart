@@ -19,7 +19,7 @@ class CartController extends GetxController {
 
     },
     {
-      "name" : "Monitor LG 22 inc 4k 120Fps",
+      "name" : "Monitor LG 22 inc 4k",
       "image" : ImagesContents.monitor,
 
       "variant" : "120 Fps",

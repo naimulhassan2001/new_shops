@@ -3,17 +3,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:new_shops/controllers/your_cart_controoler.dart';
-import 'package:new_shops/views/screens/checkouts/function/delivery_option_bottom_sheet.dart';
+import 'package:new_shops/views/screens/checkouts/function/bottom_sheet_model.dart';
 import 'package:new_shops/views/screens/your_cart/widget/cart_item.dart';
 import 'package:new_shops/views/widgets/custom_buton_outline.dart';
 import 'package:new_shops/views/widgets/custom_text.dart';
 
+import '../checkouts/checkokuts_screen.dart';
+
 class YourCartScreen extends StatelessWidget {
   YourCartScreen({super.key});
+
+
   CartController cartController = Get.put(CartController()) ;
-
-
   BottomSheetModel bottomSheetModel = BottomSheetModel();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +66,7 @@ class YourCartScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16,),
             CustomButtonOutLine(title: "Continue for payments", onTap: (){
-              bottomSheetModel.deliveryOptionSheet(context) ;
+             Get.to(CheckoutScreen()) ;
 
             }, backgroundColor: const Color(0xFFF0F2F1),)
 

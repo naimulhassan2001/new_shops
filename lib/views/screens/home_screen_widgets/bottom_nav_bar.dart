@@ -22,16 +22,15 @@ class _BottomNavBarState extends State<BottomNavBar> {
         height: 88,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
-          color: Color(0xFF0668E3),
         ),
         child: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
-            backgroundColor: const Color(0xFF0668E3),
+            backgroundColor: const Color(0xFFFFFFFF),
             selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
-            selectedItemColor: Colors.white,
-            unselectedItemColor: Colors.white.withOpacity(0.7),
+            selectedItemColor: Colors.greenAccent,
+            unselectedItemColor: Color(0xFF939393),
             showSelectedLabels: true,
-            showUnselectedLabels: false,
+            showUnselectedLabels: true,
 
             // unselectedItemColor: Colors.black,
             currentIndex: currentIndex,
@@ -40,10 +39,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 currentIndex = index;
               });},
             items: [
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+              BottomNavigationBarItem(icon: Icon(Icons.home, color: Colors.black26,), label: "Home"),
+              BottomNavigationBarItem(icon: Icon(Icons.favorite_border, color: Colors.black26,), label: "Wishlist"),
+              BottomNavigationBarItem(icon: Icon(Icons.file_present_outlined, color: Colors.black26,), label: "History"),
+              BottomNavigationBarItem(icon: Icon(Icons.person_outline_rounded,color: Colors.black38,), label: "Account"),
           ]
         )
       );

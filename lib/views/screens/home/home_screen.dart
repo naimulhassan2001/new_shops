@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:new_shops/views/screens/your_cart/your_cart_screen.dart';
 
 import '../home_screen_widgets/bottom_nav_bar.dart';
 import '../home_screen_widgets/category.dart';
@@ -19,13 +21,15 @@ class HomeScreen extends StatelessWidget {
         title: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Delivery address",style: TextStyle(color: Colors.black87, fontSize: 15),),
-            Text("Salatiga City, Central Java")
+            Text("Delivery address",style: TextStyle(color: Colors.black87, fontSize: 14),),
+            Text("Salatiga City, Central Java",style: TextStyle(fontSize: 19),)
           ],
         ),
 
         actions: [
-          IconButton(onPressed: (){}, icon: const Icon(Icons.shopping_cart)),
+          IconButton(onPressed: (){
+            Get.to(YourCartScreen());
+          }, icon: const Icon(Icons.shopping_cart)),
           IconButton(onPressed: (){}, icon: const Icon(Icons.notifications_none_outlined))
         ],
       ),
@@ -35,22 +39,22 @@ class HomeScreen extends StatelessWidget {
 
 
       /// body part
-      body: const Padding(
-        padding: EdgeInsets.all(8.0),
+      body:  Padding(
+        padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SearchWidget(),
+              const SearchWidget(),
 
               // SizedBox(height: 50,),
-              HomeScreenSilder(),
+              const HomeScreenSilder(),
               // SizedBox(height: 50,),
 
-               Text(("Category")),
-               CategoryWidget(),
+               const Text(("  Category")),
+               const CategoryWidget(),
 
-              Text("Recent Product"),
+              const Text("  Recent Product"),
                RecentProductGirdView(),
             ],
           ),

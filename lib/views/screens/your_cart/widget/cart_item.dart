@@ -13,6 +13,7 @@ class CartItem extends StatelessWidget {
     required this.variant,
     required this.price,
     required this.quantity,
+    this.checkBox = true
 
 
   });
@@ -24,6 +25,7 @@ class CartItem extends StatelessWidget {
   String price ;
   String quantity ;
   RxBool isChecked = false.obs;
+  bool checkBox ;
 
 
   @override
@@ -33,14 +35,15 @@ class CartItem extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 16),
       child: Row(
         children: [
-          Expanded(
-            flex: 1,
-            child: Obx(() => Checkbox(
-              activeColor: Colors.green,
-                value: isChecked.value,
-                onChanged: (value){
-              isChecked.value = value! ;
-            })),
+          Center(  child: checkBox ? Expanded(
+              flex: 1,
+              child: Obx(() => Checkbox(
+                activeColor: Colors.green,
+                  value: isChecked.value,
+                  onChanged: (value){
+                isChecked.value = value! ;
+              })),
+            ) : null,
           ),
           Expanded(
             flex: 2,
@@ -68,48 +71,58 @@ class CartItem extends StatelessWidget {
                   Row(
                     children: [
                       CustomText(title: "\$ $price"),
-                      const Spacer(),
-                      Container(
-                          width: 18,
-                          height: 18,
-                          decoration: const ShapeDecoration(
-                            color: Colors.white,
-                            shape: OvalBorder(
-                              side:
-                              BorderSide(width: 1, color: Color(0xFF939393)),
-                            ),
-                          ),
-                          child: const Icon(Icons.remove, color: Color(0xFF939393), size: 16,)),
-                      const SizedBox(width: 8,),
-
-                      CustomText(title: quantity),
-                      const SizedBox(width: 8,),
+                      Spacer(),
 
 
-                      Container(
-                          width: 18,
-                          height: 18,
-                          decoration: const ShapeDecoration(
-                            color: Colors.white,
-                            shape: OvalBorder(
-                              side:
-                              BorderSide(width: 1, color: Color(0xFF939393)),
-                            ),
-                          ),
-                          child: const Icon(Icons.add, color: Color(0xFF939393), size: 16,)),
-                      const SizedBox(width: 8,),
+                      Center(
+                        child: checkBox ?Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Container(
+                                width: 18,
+                                height: 18,
+                                decoration: const ShapeDecoration(
+                                  color: Colors.white,
+                                  shape: OvalBorder(
+                                    side:
+                                    BorderSide(width: 1, color: Color(0xFF939393)),
+                                  ),
+                                ),
+                                child: const Icon(Icons.remove, color: Color(0xFF939393), size: 16,)),
+                            const SizedBox(width: 8,),
 
-                      Container(
-                          width: 24,
-                          height: 24,
-                          decoration: const ShapeDecoration(
-                            color: Colors.white,
-                            shape: OvalBorder(
-                              side:
-                              BorderSide(width: 1, color: Color(0xFF939393)),
-                            ),
-                          ),
-                          child: const Icon(Icons.delete_outlined, color: Color(0xFF939393), size: 16,)),
+                            CustomText(title: quantity),
+                            const SizedBox(width: 8,),
+
+
+                            Container(
+                                width: 18,
+                                height: 18,
+                                decoration: const ShapeDecoration(
+                                  color: Colors.white,
+                                  shape: OvalBorder(
+                                    side:
+                                    BorderSide(width: 1, color: Color(0xFF939393)),
+                                  ),
+                                ),
+                                child: const Icon(Icons.add, color: Color(0xFF939393), size: 16,)),
+                            const SizedBox(width: 8,),
+
+                            Container(
+                                width: 24,
+                                height: 24,
+                                decoration: const ShapeDecoration(
+                                  color: Colors.white,
+                                  shape: OvalBorder(
+                                    side:
+                                    BorderSide(width: 1, color: Color(0xFF939393)),
+                                  ),
+                                ),
+                                child: const Icon(Icons.delete_outlined, color: Color(0xFF939393), size: 16,)),
+                          ],
+                        ) : const Text("1 quantity"),
+                      )
+
 
 
 
