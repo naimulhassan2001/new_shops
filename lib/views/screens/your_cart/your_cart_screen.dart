@@ -40,7 +40,9 @@ class YourCartScreen extends StatelessWidget {
             ),
             const Divider(),
             const SizedBox(height: 8,),
+            const Divider(),
             Expanded(
+              flex: 1,
               child: ListView.builder(
                 itemCount: 3,
                 itemBuilder: (context, index) {
@@ -48,15 +50,15 @@ class YourCartScreen extends StatelessWidget {
                   var item =cartController.cartList[index] ;
 
                   return CartItem(
-                      name: item['name'],
-                      image: item['image'],
-                      variant: item['variant'],
-                      price: item['price'],
-                      quantity: item['quantity'],
-                      ) ;
-              },),
+                    name: item['name'],
+                    image: item['image'],
+                    variant: item['variant'],
+                    price: item['price'],
+                    quantity: item['quantity'],
+                  ) ;
+                },),
             ),
-            const Divider(),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

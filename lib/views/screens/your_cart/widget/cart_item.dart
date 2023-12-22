@@ -35,15 +35,12 @@ class CartItem extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 16),
       child: Row(
         children: [
-          Center(  child: checkBox ? Expanded(
-              flex: 1,
-              child: Obx(() => Checkbox(
-                activeColor: Colors.green,
-                  value: isChecked.value,
-                  onChanged: (value){
-                isChecked.value = value! ;
-              })),
-            ) : null,
+          Center(  child: checkBox ? Obx(() => Checkbox(
+            activeColor: Colors.green,
+              value: isChecked.value,
+              onChanged: (value){
+            isChecked.value = value! ;
+          })) : null,
           ),
           Expanded(
             flex: 2,
@@ -67,7 +64,7 @@ class CartItem extends StatelessWidget {
                       ),
                   ),
                   CustomText(title: "Variant: $variant", color: const Color(0xFF939393)),
-                  const Spacer(),
+                  // const Spacer(),
                   Row(
                     children: [
                       CustomText(title: "\$ $price"),

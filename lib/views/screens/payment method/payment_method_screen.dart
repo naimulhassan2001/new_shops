@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:new_shops/views/widgets/custom_buton_outline.dart';
+import 'package:new_shops/views/widgets/custom_text.dart';
 
 import '../../../controllers/your_cart_controoler.dart';
 import '../your_cart/widget/cart_item.dart';
@@ -14,7 +15,7 @@ class PaymentMethodScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Checkouts"),
+        title: const Text("Payment method"),
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 20),
@@ -33,36 +34,47 @@ class PaymentMethodScreen extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
         child: Column(
           children: [
-            Expanded(
-              child: ListView.builder(
-                itemCount: 3,
-                itemBuilder: (context, index) {
-                  var item = cartController.cartList[index];
-
-                  return ListTile(
-                    leading: Image.asset("${item["image"]}"),
-                    title: Text(item["name"]),
-                    subtitle: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(item["variant"]),
-                        Text(
-                          item["price"],
-                          style: TextStyle(fontWeight: FontWeight.w700),
-                        ),
-                      ],
-                    ),
-                    trailing: Text("quantity${item["quantity"]}"),
-                  );
-                },
+            CustomText(title: "select existing card"),
+            const SizedBox(
+              height: 16,
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 5, right: 5),
+              height: 50,
+              width: 400,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    12,
+                  ),
+                  border: Border.all(color: Colors.black)),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Center(child: CustomText(title: "**** **** **** 1934", color: Colors.black87,)),
+                    const Icon(Icons.delete, size: 16, color: Color(0xFF939393)),
+                  ],
+                ),
               ),
             ),
-            const Text("Hide Text"),
-             SizedBox(height: 19,),
+            SizedBox(
+              height: 19,
+            ),
+            const Divider(),
+            const SizedBox(
+              height: 16,
+            ),
+
+            CustomText(title: "or input new card", fontSize: 18, fontWeight: FontWeight.w600),
+
+            CustomText(title: "select existing card"),
+            const SizedBox(
+              height: 16,
+            ),
             Container(
               margin: const EdgeInsets.only(left: 5, right: 5),
               height: 50,
@@ -72,41 +84,22 @@ class PaymentMethodScreen extends StatelessWidget {
                     12,
                   ),
                   border: Border.all(color: Colors.black)),
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Center(child: Text("    Regular (2-4 days Delivery")),
-                  Icon(Icons.arrow_forward)
-                ],
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Center(child: CustomText(title: "**** **** **** ****", color: Colors.black87,)),
+                    const Icon(Icons.delete, size: 16, color: Color(0xFF939393)),
+                  ],
+                ),
               ),
-            ),             SizedBox(height: 19,),
-
-            Divider(),             SizedBox(height: 19,),
-
-            Container(
-              margin: const EdgeInsets.only(left: 5, right: 5),
-              height: 50,
-              width: 400,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    12,
-                  ),
-                  border: Border.all(color: Colors.black)),
-              child: const Center(
-                  child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "    Apply a Discounts",
-                    style: TextStyle(color: Colors.black26),
-                  ),
-                  Icon(Icons.arrow_forward)
-                ],
-              )),
-            ),             SizedBox(height: 19,),
-
-            Divider(),             SizedBox(height: 19,),
-
+            ),
+            
+            
+            const SizedBox(
+              height: 16,
+            ),
             const SizedBox(
               height: 14,
             ),
@@ -119,15 +112,17 @@ class PaymentMethodScreen extends StatelessWidget {
                   size: 20,
                 )
               ],
-            ),             SizedBox(height: 13,),
-
-
+            ),
+            SizedBox(
+              height: 13,
+            ),
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [Text("Totals"), Text(r"$195524")],
             ),
-            SizedBox(height: 19,),
-
+            SizedBox(
+              height: 19,
+            ),
             CustomButtonOutLine(
                 height: 45,
                 backgroundColor: Color(0xFF67C4A7),

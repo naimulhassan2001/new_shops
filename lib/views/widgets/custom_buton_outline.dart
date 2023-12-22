@@ -22,7 +22,7 @@ class CustomButtonOutLine extends StatelessWidget {
   double fontSize;
   double radius;
   Color? textColor = const Color(0xFF393F42);
-  Color? backgroundColor = Color(0xFFF0F2F1);
+  Color? backgroundColor = const Color(0xFFF0F2F1);
 
   @override
   Widget build(BuildContext context) {

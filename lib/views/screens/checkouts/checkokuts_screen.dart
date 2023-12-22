@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:new_shops/views/screens/payment%20method/payment_method_screen.dart';
 
 import '../../../controllers/your_cart_controoler.dart';
 import '../../widgets/custom_buton_outline.dart';
@@ -63,6 +64,89 @@ class CheckoutScreen extends StatelessWidget {
                   ) ;
                 },),
             ),
+
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomText(title: "hide list", color: Colors.green),
+              ],
+            ),
+            const SizedBox(height: 16,),
+
+            GestureDetector(
+              onTap: (){
+                bottomSheetModel.deliveryOptionSheet(context) ;
+
+              },
+              child: Container(
+                height: 50,
+                padding: const EdgeInsets.all(10),
+                decoration: ShapeDecoration(
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    side: const BorderSide(width: 1, color:  Color(0xFFD9D9D9)),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("select the delivery option",
+                        style: TextStyle(
+                          color: Color(0xFF939393),
+                          fontSize: 14,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w500,
+                        )
+
+                    ),
+                    Icon(Icons.arrow_forward_ios_sharp, size: 12,)
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 16,),
+            const Divider(),
+            const SizedBox(height: 16,),
+
+
+            GestureDetector(
+              onTap: (){
+                bottomSheetModel.deliveryOptionSheet(context) ;
+
+              },
+              child: Container(
+                height: 50,
+                padding: const EdgeInsets.all(10),
+                decoration: ShapeDecoration(
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    side: const BorderSide(width: 1, color:  Color(0xFFD9D9D9)),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Apple discount",
+                        style: TextStyle(
+                          color: Color(0xFF939393),
+                          fontSize: 14,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w500,
+                        )
+
+                    ),
+                    Icon(Icons.arrow_forward_ios_sharp, size: 12,)
+                  ],
+                ),
+              ),
+            ),
+
+
+            const SizedBox(height: 16,),
+
             const Divider(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -73,14 +157,20 @@ class CheckoutScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16,),
             CustomButtonOutLine(title: "Continue for payments", onTap: (){
-              bottomSheetModel.deliveryOptionSheet(context) ;
+              Get.to(PaymentMethodScreen());
 
-            }, backgroundColor: const Color(0xFFF0F2F1),)
+            }, backgroundColor: const Color(0xFFF0F2F1),),
+            
+
+            
+            
+
+
 
 
           ],
         ),
       ),
-    );;
+    );
   }
 }
