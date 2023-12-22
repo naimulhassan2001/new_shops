@@ -137,6 +137,7 @@ class CheckoutScreen extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                         )
 
+
                     ),
                     Icon(Icons.arrow_forward_ios_sharp, size: 12,)
                   ],
