@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CheckoutScreen(),
+      home: HomeScreen(),
       //   home: SearchScreen(),
       // home: DetailsProductScreen(),
       //  home: YourCartScreen(),
