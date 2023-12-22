@@ -84,8 +84,8 @@ class BottomSheetModel {
       builder: (context) {
         return Container(
           height: 340,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+          child: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
             child: SingleChildScrollView(
               child: Column(
                 children: [

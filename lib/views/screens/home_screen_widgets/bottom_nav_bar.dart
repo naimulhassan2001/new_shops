@@ -1,5 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:new_shops/views/screens/home/home_screen.dart';
+import 'package:new_shops/views/screens/wishlist/wishlist_screen.dart';
+
+import '../profile/profile_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -12,7 +17,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int currentIndex = 0;
 
   List navigationPagesList = [
-
   ];
 
   @override
@@ -37,8 +41,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
             onTap: (index) {
               setState(() {
                 currentIndex = index;
+                if(index == 1){
+                  Get.to(WishlistScreen());
+                }
+                if(index == 3){
+                  Get.to(ProfileScreen());
+                }
               });},
-            items: [
+            items: const [
               BottomNavigationBarItem(icon: Icon(Icons.home, color: Colors.black26,), label: "Home"),
               BottomNavigationBarItem(icon: Icon(Icons.favorite_border, color: Colors.black26,), label: "Wishlist"),
               BottomNavigationBarItem(icon: Icon(Icons.file_present_outlined, color: Colors.black26,), label: "History"),
