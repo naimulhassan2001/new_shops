@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:new_shops/utils/app_string.dart';
 
 import '../../../widgets/custom_buton_outline.dart';
 import '../../../widgets/custom_button.dart';
@@ -14,12 +15,12 @@ class ProductAction extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         CustomButton(
-            title: "Add to Cart",
+            title: AppString.addToCart,
             onTap: () {},
             fixWidth: true,
             width: 160),
         CustomButtonOutLine(
-            title: "Buy Now",
+            title: AppString.buyNow,
             onTap: () {},
             fixWidth: true,
             width: 160),

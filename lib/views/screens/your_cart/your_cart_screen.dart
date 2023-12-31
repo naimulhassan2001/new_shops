@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:new_shops/controllers/your_cart_controoler.dart';
 import 'package:new_shops/views/screens/checkouts/function/bottom_sheet_model.dart';
@@ -26,20 +27,20 @@ class YourCartScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
         child: Column(
           children: [
             const Divider(),
             Row(
               children: [
-                CustomText(title: "Delivery to", fontSize: 16,),
+                CustomText(title: "Delivery to", fontSize: 16.sp,),
                 const Spacer(),
                 CustomText(title: "Salatiga City, Central java"),
                 const Icon(Icons.keyboard_arrow_down_outlined)
               ],
             ),
             const Divider(),
-            const SizedBox(height: 8,),
+            SizedBox(height: 8.h,),
             const Divider(),
             Expanded(
               flex: 1,
@@ -66,16 +67,21 @@ class YourCartScreen extends StatelessWidget {
                 CustomText(title: "\$ 00,0", fontWeight: FontWeight.w600,)
               ],
             ),
-            const SizedBox(height: 16,),
-            CustomButtonOutLine(title: "Continue for payments", onTap: (){
-             Get.to(CheckoutScreen()) ;
+            SizedBox(height: 16.h,),
 
-            }, backgroundColor: const Color(0xFFF0F2F1),)
 
 
           ],
         ),
       ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 20.h),
+        child: CustomButtonOutLine(title: "Continue for payments", onTap: (){
+          Get.to(CheckoutScreen()) ;
+
+        }, backgroundColor: const Color(0xFFF0F2F1),),
+      ),
+
     );
   }
 }

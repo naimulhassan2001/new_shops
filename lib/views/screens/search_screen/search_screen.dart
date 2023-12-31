@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:new_shops/controllers/searchControler.dart';
 import 'package:new_shops/views/widgets/custom_buton_outline.dart';
 import 'package:new_shops/views/widgets/custom_text.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../widgets/custom_button.dart';
 
@@ -37,7 +36,7 @@ class _SearchScreenState extends State<SearchScreen> {
               decoration: InputDecoration(
                   prefixIcon: IconButton(
                       onPressed: () {
-                        SaveText(searchText.text);
+                        // SaveText(searchText.text);
                       },
                       icon: Icon(Icons.search)),
                   hintText: "Search here",
@@ -46,7 +45,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       borderRadius: BorderRadius.circular(12))),
             ),
           ),
-          actions: [
+          actions: const [
             Badge(
                 alignment: Alignment.center,
                 label: Text("2"),
@@ -131,21 +130,21 @@ class _SearchScreenState extends State<SearchScreen> {
           ),
         ));
   }
-
-  Future<void> SaveText(String text) async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    preferences.setString("searchText", text);
-  }
-
-  Future<void> saveText() async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    String text = preferences.getString("searchText") ?? "";
-
-    setState(() {
-      searchText = text as TextEditingController;
-      searchText.addListener(() {
-        text;
-      });
-    });
-  }
+  //
+  // Future<void> SaveText(String text) async {
+  //   SharedPreferences preferences = await SharedPreferences.getInstance();
+  //   preferences.setString("searchText", text);
+  // }
+  //
+  // Future<void> saveText() async {
+  //   SharedPreferences preferences = await SharedPreferences.getInstance();
+  //   String text = preferences.getString("searchText") ?? "";
+  //
+  //   setState(() {
+  //     searchText = text as TextEditingController;
+  //     searchText.addListener(() {
+  //       text;
+  //     });
+  //   });
+  // }
 }

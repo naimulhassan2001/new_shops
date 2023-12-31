@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreenSilder extends StatefulWidget {
   const HomeScreenSilder({super.key});
@@ -22,7 +23,7 @@ class _HomeScreenSilderState extends State<HomeScreenSilder> {
             itemCount: images.length,
             options: CarouselOptions(
               autoPlay: true,
-              height: 200,
+              height: 200.h,
               aspectRatio: 5.5,
               autoPlayAnimationDuration: const Duration(seconds: 1),
               reverse: false,
@@ -30,13 +31,13 @@ class _HomeScreenSilderState extends State<HomeScreenSilder> {
             itemBuilder: (context, index, realIndex) {
               return GestureDetector(
                 child: Container(
-                  height: 200,
-                  width: 400,
+                  height: 200.h,
+                  width: 400.w,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16)
+                      borderRadius: BorderRadius.circular(16.r)
                   ),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(13),
+                    borderRadius: BorderRadius.circular(13.r),
                     child: Image.asset(images[index]),
                   ),
                 ),

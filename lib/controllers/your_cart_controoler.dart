@@ -1,9 +1,7 @@
 
 
 import 'package:get/get.dart';
-import 'package:new_shops/utils/name_constents.dart';
-
-import '../utils/images_constent.dart';
+import '../utils/app_images.dart';
 
 class CartController extends GetxController {
 
@@ -12,7 +10,7 @@ class CartController extends GetxController {
   RxList cartList = [
     {
       "name" : "Air Pods max by Apple",
-      "image" : ImagesContents.airPods,
+      "image" : AppImages.airPods,
       "variant" : "Grey",
       "price" : "1999,99",
       "quantity" : "1",
@@ -20,7 +18,7 @@ class CartController extends GetxController {
     },
     {
       "name" : "Monitor LG 22 inc 4k",
-      "image" : ImagesContents.monitor,
+      "image" : AppImages.monitor,
 
       "variant" : "120 Fps",
       "price" : "299,99",
@@ -29,7 +27,7 @@ class CartController extends GetxController {
     },
     {
       "name" : "Earphones for monitor",
-      "image" : ImagesContents.earPhone,
+      "image" : AppImages.earPhone,
 
       "variant" : "Colbo",
       "price" : "199,99",

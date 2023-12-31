@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:new_shops/views/screens/details%20product/details_product_screen.dart';
 import 'package:new_shops/views/widgets/custom_buton_outline.dart';
 
 import '../../../controllers/searchControler.dart';
-import '../../../utils/images_constent.dart';
-import 'add_to_cart.dart';
 
 class RecentProductGirdView extends StatelessWidget {
   RecentProductGirdView({super.key});
@@ -19,14 +18,15 @@ class RecentProductGirdView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 300,
+    return SizedBox(
       child: GridView.builder(
-        itemCount: searchScreenController.products.value.length,
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: searchScreenController.products.length,
         gridDelegate:
             const SliverGridDelegateWithFixedCrossAxisCount(childAspectRatio: 4/5,crossAxisCount: 2),
         itemBuilder: (context, index) {
-          var product = searchScreenController.products.value[index];
+          var product = searchScreenController.products[index];
           return GestureDetector(
             onTap: (){
               Get.to(DetailsProductScreen()) ;
@@ -49,8 +49,8 @@ class RecentProductGirdView extends StatelessWidget {
                         Text("${product['name']}"),
                         Text("${product['price']}"),
                         CustomButtonOutLine(
-                            height: 45,
-                            backgroundColor: Color(0xFF67C4A7),
+                            height: 45.h,
+                            backgroundColor: const Color(0xFF67C4A7),
                             title: "Add To Cart",
                             textColor: Colors.white,
                             onTap: () {})

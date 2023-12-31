@@ -1,7 +1,7 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:new_shops/utils/app_string.dart';
 
 import '../../../widgets/custom_text.dart';
 
@@ -12,7 +12,7 @@ class BottomSheetModel {
       context: context,
       builder: (context) {
         return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -20,42 +20,64 @@ class BottomSheetModel {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomText(
-                      title: "Select The delivery",
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,),
-                  IconButton(onPressed: (){Get.back();}, icon: const Icon(Icons.cancel_outlined,))
+                    title: AppString.selectTheDeliveryOption,
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  IconButton(
+                      onPressed: () {
+                        Get.back();
+                      },
+                      icon: const Icon(
+                        Icons.cancel_outlined,
+                      ))
                 ],
               ),
-              const SizedBox(height: 16,),
+              SizedBox(
+                height: 16.h,
+              ),
               Column(
                 children: [
-                  CustomText(title: "Express", fontWeight: FontWeight.w600,),
+                  CustomText(
+                    title: AppString.express,
+                    fontWeight: FontWeight.w600,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CustomText(title: "1-3 days delivery"),
+                      CustomText(title: AppString.oneToThereDaysDelivery),
                       CustomText(title: "\$1499", fontWeight: FontWeight.w600),
                     ],
                   )
                 ],
               ),
-              const SizedBox(height: 16,),
+              SizedBox(
+                height: 16.h,
+              ),
               Column(
                 children: [
-                  CustomText(title: "Regular", fontWeight: FontWeight.w600,),
+                  CustomText(
+                    title: AppString.regular,
+                    fontWeight: FontWeight.w600,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CustomText(title: "2-4 days delivery"),
+                      CustomText(title: AppString.twoToFourDaysDelivery),
                       CustomText(title: "\$799", fontWeight: FontWeight.w600),
                     ],
                   )
                 ],
               ),
-              const SizedBox(height: 16,),
+              SizedBox(
+                height: 16.h,
+              ),
               Column(
                 children: [
-                  CustomText(title: "Cargo", fontWeight: FontWeight.w600,),
+                  CustomText(
+                    title: AppString.cargo,
+                    fontWeight: FontWeight.w600,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -65,11 +87,6 @@ class BottomSheetModel {
                   )
                 ],
               ),
-
-
-
-
-
             ],
           ),
         );
@@ -77,20 +94,18 @@ class BottomSheetModel {
     );
   }
 
-  NoResponseButtomSheet(BuildContext context) {
+  noResponseButtonSheet(BuildContext context) {
     return showModalBottomSheet(
       backgroundColor: Colors.white,
       context: context,
       builder: (context) {
         return Container(
-          height: 340,
-          child: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-            child: SingleChildScrollView(
+          height: 340.h,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
+            child: const SingleChildScrollView(
               child: Column(
-                children: [
-
-                ],
+                children: [],
               ),
             ),
           ),

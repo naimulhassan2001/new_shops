@@ -1,9 +1,12 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:new_shops/utils/app_string.dart';
 import 'package:new_shops/views/screens/your_cart/your_cart_screen.dart';
 
-import '../home_screen_widgets/bottom_nav_bar.dart';
 import '../home_screen_widgets/category.dart';
 import '../home_screen_widgets/home_screen_slider.dart';
 import '../home_screen_widgets/recent_product_girdview.dart';
@@ -18,11 +21,11 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
 
-        title: const Column(
+        title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Delivery address",style: TextStyle(color: Colors.black87, fontSize: 14),),
-            Text("Salatiga City, Central Java",style: TextStyle(fontSize: 19),)
+            Text(AppString.deliveryAddress,style: TextStyle(color: Colors.black87, fontSize: 14.sp),),
+            Text(AppString.salatigaCityCentralJava,style: TextStyle(fontSize: 19.sp),)
           ],
         ),
 
@@ -35,13 +38,11 @@ class HomeScreen extends StatelessWidget {
       ),
 
 
-       bottomNavigationBar: const BottomNavBar(),
-
-
       /// body part
       body:  Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.w),
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -51,10 +52,10 @@ class HomeScreen extends StatelessWidget {
               const HomeScreenSilder(),
               // SizedBox(height: 50,),
 
-               const Text(("  Category")),
+               const Text((AppString.category)),
                const CategoryWidget(),
 
-              const Text("  Recent Product"),
+              const Text(AppString.recentProduct),
                RecentProductGirdView(),
             ],
           ),

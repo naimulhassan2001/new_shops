@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_shops/utils/images_constent.dart';
-import 'package:new_shops/utils/name_constents.dart';
+import 'package:new_shops/utils/app_images.dart';
+import 'package:new_shops/utils/app_string.dart';
 import 'package:new_shops/views/screens/details%20product/widget/action.dart';
 import 'package:new_shops/views/widgets/custom_buton_outline.dart';
 import 'package:new_shops/views/widgets/custom_text.dart';
@@ -25,7 +25,7 @@ class DetailsProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppString.detailsProduct),
+        title: const Text(AppString.detailsProduct),
         centerTitle: true,
         actions: const [
           Padding(
@@ -47,12 +47,13 @@ class DetailsProductScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
               SizedBox(
                   height: 300,
                   child: Image.asset(
-                    ImagesContents.airPods,
+                    AppImages.airPods,
                     fit: BoxFit.fill,
                   )),
               const SizedBox(height: 8),
@@ -63,7 +64,7 @@ class DetailsProductScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomText(title: "Air pods max by Apple", fontSize: 16),
+                      CustomText(title: AppString.airpodsMaxByApple, fontSize: 16),
                       const SizedBox(
                         height: 4,
                       ),
@@ -88,7 +89,7 @@ class DetailsProductScreen extends StatelessWidget {
                     backgroundColor: Color(0x19939393),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Image.asset(ImagesContents.love),
+                      child: Image.asset(AppImages.love),
                     ),
                   )
                 ],
@@ -97,7 +98,7 @@ class DetailsProductScreen extends StatelessWidget {
                 height: 16,
               ),
               CustomText(
-                  title: "Choose the color",
+                  title: AppString.chooseTheColor,
                   color: const Color(0xFF939393),
                   fontWeight: FontWeight.w400),
               SizedBox(
@@ -130,7 +131,7 @@ class DetailsProductScreen extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Image.asset(ImagesContents.apple),
+                  Image.asset(AppImages.apple),
                   const SizedBox(
                     width: 12,
                   ),
@@ -139,7 +140,7 @@ class DetailsProductScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CustomText(
-                        title: "Apple Store",
+                        title: AppString.appleStore,
                         fontSize: 16,
                         color: const Color(0xFF393F42),
                       ),
@@ -152,7 +153,7 @@ class DetailsProductScreen extends StatelessWidget {
                   ),
                   const Spacer(),
                   CustomButtonOutLine(
-                    title: "Follow",
+                    title: AppString.follow,
                     onTap: () {},
                     height: 40,
                     fontSize: 14,
@@ -164,7 +165,7 @@ class DetailsProductScreen extends StatelessWidget {
                 height: 8,
               ),
               CustomText(
-                title: "Description of product",
+                title: AppString.descriptionProduct,
                 fontSize: 16,
                 color: const Color(0xFF393F42),
               ),
@@ -177,11 +178,15 @@ class DetailsProductScreen extends StatelessWidget {
               const SizedBox(
                 height: 14,
               ),
-              const ProductAction()
             ],
           ),
         ),
       ),
+      bottomNavigationBar: const Padding(
+        padding: EdgeInsets.only(left: 20, right: 20, bottom: 20),
+        child: ProductAction(),
+      )
+      ,
     );
   }
 }

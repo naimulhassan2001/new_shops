@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import 'package:new_shops/views/widgets/custom_text.dart';
-
 
 class WishlistItem extends StatelessWidget {
   WishlistItem({
@@ -13,24 +13,25 @@ class WishlistItem extends StatelessWidget {
     required this.price,
   });
 
+  String image;
 
-  String image ;
-  String name ;
-  String variant ;
-  String price ;
+  String name;
 
+  String variant;
+
+  String price;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80,
-      margin: const EdgeInsets.only(bottom: 16),
+      height: 80.h,
+      margin: EdgeInsets.only(bottom: 16.h),
       child: Row(
         children: [
-          Expanded(
-              flex: 2,
-              child: Image.asset(image) ),
-          const SizedBox(width: 16,),
+          Expanded(flex: 2, child: Image.asset(image)),
+          SizedBox(
+            width: 16.w,
+          ),
           Expanded(
               flex: 7,
               child: Column(
@@ -40,27 +41,21 @@ class WishlistItem extends StatelessWidget {
                     child: Text(
                       name,
                       maxLines: 1,
-                      style: const TextStyle(
-                          color: Color(0xFF393F42),
-                          fontSize: 18,
+                      style: TextStyle(
+                          color: const Color(0xFF393F42),
+                          fontSize: 18.sp,
                           fontFamily: 'Inter',
-                          fontWeight: FontWeight.w500
-                      ),
+                          fontWeight: FontWeight.w500),
                     ),
                   ),
-                  CustomText(title: "Variant: $variant", color: const Color(0xFF939393)),
+                  CustomText(
+                      title: "Variant: $variant",
+                      color: const Color(0xFF939393)),
                   // const Spacer(),
-                  Row(
-                    children: [
-                      CustomText(title: "\$ $price"),
-                      Spacer(),
-                    ],
-                  )
-
+                  CustomText(title: "\$ $price")
                 ],
               ))
         ],
-
       ),
     );
   }

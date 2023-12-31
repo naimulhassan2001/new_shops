@@ -1,4 +1,4 @@
-class ImagesContents{
+class AppImages{
    static const monitor = "assets/images/monitor.png";
    static const mug= "assets/images/mock.png";
    static const earphones= "assets/images/earphones.png";
@@ -7,4 +7,5 @@ class ImagesContents{
    static const apple= "assets/images/apple.png";
    static const love= "assets/icons/love.png";
    static const earPhone= "assets/images/earphone.png";
+   static const success= "assets/images/success.png";
 }

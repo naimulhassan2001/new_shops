@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_shops/utils/app_icons.dart';
+import 'package:new_shops/utils/app_string.dart';
 
 class CategoryWidget extends StatelessWidget {
   const CategoryWidget({super.key});
@@ -6,9 +9,9 @@ class CategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        height: 80,
+      padding: EdgeInsets.all(8.w),
+      child: SizedBox(
+        height: 80.h,
         child: ListView(
           scrollDirection: Axis.horizontal,
           children: [
@@ -16,84 +19,84 @@ class CategoryWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  margin: EdgeInsets.only(right: 22, left: 8),
-                  height: 50,
-                  width: 50,
+                  margin: EdgeInsets.only(right: 22.w, left: 8.w),
+                  height: 50.h,
+                  width: 50.w,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Color(0xFFEDF7FF),
+                    borderRadius: BorderRadius.circular(12.r),
+                    color: const Color(0xFFEDF7FF),
                   ),
-                  child: Image.asset("assets/icons/fashion1.png"),
+                  child: Image.asset(AppIcon.fashion),
                 ),
-                Text("Apparel")
+                const Text(AppString.apparel)
               ],
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  margin: EdgeInsets.only(right: 25),
-                  height: 50,
-                  width: 50,
+                  margin: EdgeInsets.only(right: 25.w),
+                  height: 50.h,
+                  width: 50.w,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Color(0xFFEDF7FF),
+                    borderRadius: BorderRadius.circular(12.r),
+                    color: const Color(0xFFEDF7FF),
                   ),
-                  child: Image.asset("assets/icons/fashion2.png"),
+                  child: Image.asset(AppIcon.fashion2),
                 ),
-                Text("School")
+                const Text(AppString.school)
               ],
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  margin: EdgeInsets.only(right: 25),
-                  height: 50,
-                  width: 50,
+                  margin: EdgeInsets.only(right: 25.w),
+                  height: 50.h,
+                  width: 50.w,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Color(0xFFFFEDDD),
+                    borderRadius: BorderRadius.circular(12.r),
+                    color: const Color(0xFFFFEDDD),
                   ),
-                  child: Image.asset("assets/icons/fashion3.png"),
+                  child: Image.asset(AppIcon.fashion3),
                 ),
-                Text("Sports")
+                const Text(AppString.sports)
               ],
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  margin: EdgeInsets.only(right: 25),
-                  height: 50,
-                  width: 50,
+                  margin: EdgeInsets.only(right: 25.w),
+                  height: 50.h,
+                  width: 50.w,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Color(0xFFFFEDDD),
+                    borderRadius: BorderRadius.circular(12.r),
+                    color: const Color(0xFFFFEDDD),
                   ),
-                  child: Image.asset("assets/icons/fashion4.png"),
+                  child: Image.asset(AppIcon.fashion4),
                 ),
-                Text("Electronic")
+                const Text(AppString.electronic)
               ],
             ),
-
-
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  margin: EdgeInsets.only(right: 25),
-                  height: 50,
-                  width: 50,
+                  margin: EdgeInsets.only(right: 25.w),
+                  height: 50.h,
+                  width: 50.w,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Color(0xFFFFEDDD),
+                    borderRadius: BorderRadius.circular(12.r),
+                    color: const Color(0xFFFFEDDD),
                   ),
-                  child: Image.asset("assets/icons/all.png"),
+                  child: Image.asset(AppIcon.all),
                 ),
                 Container(
-                    margin: EdgeInsets.only(left: 6),
-                    child: Text("More",))
+                    margin: EdgeInsets.only(left: 6.w),
+                    child: const Text(
+                      AppString.more,
+                    ))
               ],
             ),
           ],

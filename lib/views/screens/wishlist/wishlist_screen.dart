@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:new_shops/controllers/wishlist_controller.dart';
 import 'package:new_shops/views/screens/wishlist/wishlist_item.dart';
@@ -21,12 +22,13 @@ class WishlistScreen extends StatelessWidget {
         title: const Text("Your Wishlist"),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
         child: Column(
           children: [
-            Divider(),
+            const Divider(),
             Expanded(
               child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
                 itemCount: 3,
                   itemBuilder: (context, index) {
                     var item = wishlistController.wishList[index];
