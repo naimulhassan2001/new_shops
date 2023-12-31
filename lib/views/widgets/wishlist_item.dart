@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 
 import 'package:new_shops/views/widgets/custom_text.dart';
 
-class WishlistItem extends StatelessWidget {
-  WishlistItem({
+class ProductListItem extends StatelessWidget {
+  ProductListItem({
     super.key,
     required this.name,
     required this.image,

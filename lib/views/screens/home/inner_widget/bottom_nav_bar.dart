@@ -3,11 +3,12 @@ import 'package:get/get.dart';
 import 'package:get/get_rx/get_rx.dart';
 import 'package:new_shops/controllers/home_controller.dart';
 import 'package:new_shops/utils/app_string.dart';
+import 'package:new_shops/views/screens/folder_screen/folder_screen.dart';
 import 'package:new_shops/views/screens/history/history_screen.dart';
 import 'package:new_shops/views/screens/home/home_screen.dart';
 import 'package:new_shops/views/screens/wishlist/wishlist_screen.dart';
 
-import '../profile/profile_screen.dart';
+import '../../profile/profile_screen.dart';
 
 class BottomNavBar extends StatelessWidget {
   BottomNavBar({super.key});
@@ -16,7 +17,8 @@ class BottomNavBar extends StatelessWidget {
     const HomeScreen(),
     WishlistScreen(),
     const HistoryScreen(),
-    const ProfileScreen(),
+    FolderScreen(),
+    ProfileScreen(),
   ];
 
   HomeController homeController = Get.put(HomeController());
@@ -58,6 +60,12 @@ class BottomNavBar extends StatelessWidget {
                   color: Colors.black26,
                 ),
                 label: AppString.history),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.folder,
+                  color: Colors.black26,
+                ),
+                label: AppString.folder),
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.person_outline_rounded,

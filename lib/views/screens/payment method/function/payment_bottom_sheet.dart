@@ -29,7 +29,7 @@ class PaymentBottomSheet {
                 ],
               ),
               SizedBox(
-                height: 30.h,
+                height: 16.h,
               ),
               Image.asset(AppImages.success),
               SizedBox(
@@ -63,11 +63,20 @@ class PaymentBottomSheet {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CustomText(
-                        title: '**** **** **** 1934',
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.find_in_page_rounded,
+                            size: 18,
+                          ),
+                          SizedBox(width: 8.w,),
+                          CustomText(
+                            title: 'order_invoice',
+                          ),
+                        ],
                       ),
                       const Icon(
-                        Icons.delete,
+                        Icons.download,
                         size: 18,
                       )
                     ],

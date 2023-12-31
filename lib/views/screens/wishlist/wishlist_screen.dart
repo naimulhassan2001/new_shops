@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:new_shops/controllers/wishlist_controller.dart';
-import 'package:new_shops/views/screens/wishlist/wishlist_item.dart';
+import 'package:new_shops/views/widgets/wishlist_item.dart';
 
 import '../../../controllers/your_cart_controoler.dart';
 import '../details product/details_product_screen.dart';
@@ -36,7 +36,7 @@ class WishlistScreen extends StatelessWidget {
                       onTap: (){
                         Get.to(DetailsProductScreen());
                       },
-                      child: WishlistItem(
+                      child: ProductListItem(
                           name: item["name"],
                           image: item["image"],
                           variant: item["variant"],

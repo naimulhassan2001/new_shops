@@ -8,4 +8,5 @@ class AppImages{
    static const love= "assets/icons/love.png";
    static const earPhone= "assets/images/earphone.png";
    static const success= "assets/images/success.png";
+   static const profile= "assets/images/profile_pic.png";
 }

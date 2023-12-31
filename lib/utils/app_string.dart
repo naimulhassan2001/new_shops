@@ -36,4 +36,29 @@ class AppString {
   static const String apparel = "Apparel" ;
   static const String electronic = "Electronic" ;
   static const String more = "More" ;
+  static const String helpAndFeedback = "help and feedback" ;
+  static const String contactUs = "Contact Us" ;
+  static const String folder = "Folder" ;
+  static const String yourFolder = "Your Folder" ;
+  static const String note = "Note" ;
+  static const String folderName = "Folder Name" ;
+  static const String cancel = "Cancel" ;
+  static const String create = "Create" ;
+  static const String createFolder = "Create Folder" ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

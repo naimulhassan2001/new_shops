@@ -7,10 +7,10 @@ import 'package:get/get.dart';
 import 'package:new_shops/utils/app_string.dart';
 import 'package:new_shops/views/screens/your_cart/your_cart_screen.dart';
 
-import '../home_screen_widgets/category.dart';
-import '../home_screen_widgets/home_screen_slider.dart';
-import '../home_screen_widgets/recent_product_girdview.dart';
-import '../home_screen_widgets/search_widget.dart';
+import 'inner_widget/category.dart';
+import 'inner_widget/home_screen_slider.dart';
+import 'inner_widget/recent_product_girdview.dart';
+import 'inner_widget/search_widget.dart';
 
 
 class HomeScreen extends StatelessWidget {

@@ -89,7 +89,6 @@ class PaymentMethodScreen extends StatelessWidget {
               TextField(
                 decoration: InputDecoration(
                     labelText: "Enter card number",
-                    suffixIcon: const Icon(Icons.delete),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12.r))),
               ),

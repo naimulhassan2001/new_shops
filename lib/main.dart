@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:new_shops/views/screens/details%20product/details_product_screen.dart';
 import 'package:new_shops/views/screens/home/home_screen.dart';
-import 'package:new_shops/views/screens/home_screen_widgets/bottom_nav_bar.dart';
+import 'package:new_shops/views/screens/home/inner_widget/bottom_nav_bar.dart';
 import 'package:new_shops/views/screens/payment%20method/payment_method_screen.dart';
 import 'package:new_shops/views/screens/search_screen/search_screen.dart';
 import 'package:new_shops/views/screens/your_cart/your_cart_screen.dart';
