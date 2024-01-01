@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:new_shops/controllers/folder_controller.dart';
 import 'package:new_shops/utils/app_string.dart';
 import 'folder_list_screen/folder_list_screen.dart';
-import 'widget/folder_item.dart';
+import 'inner_widget/folder_item.dart';
 
 class FolderScreen extends StatelessWidget {
   FolderScreen({super.key});

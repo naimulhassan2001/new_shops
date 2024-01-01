@@ -3,9 +3,6 @@ import 'package:get/get.dart';
 import 'package:new_shops/controllers/folder_controller.dart';
 import 'package:new_shops/utils/app_string.dart';
 import 'package:new_shops/views/screens/folder_screen/folder_details_screen/folder_details_screen.dart';
-
-import '../../../../models/folder_model.dart';
-import '../../../../utils/app_images.dart';
 import '../../../widgets/wishlist_item.dart';
 
 class FolderListScreen extends StatelessWidget {
@@ -25,6 +22,23 @@ class FolderListScreen extends StatelessWidget {
         folderList.add(item);
       }
     }
+
+    if (folderList.length == 1) {
+      var item = folderList[0];
+
+      Future.delayed(
+        const Duration(milliseconds: 200),
+        () {
+          Get.to(FolderDetailsScreen(
+              folderName: item.folderName,
+              note: item.note,
+              image: item.image,
+              productName: item.productName,
+              price: item.price));
+        },
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(AppString.folderName),

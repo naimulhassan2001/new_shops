@@ -20,6 +20,7 @@ class FolderItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 80.h,
+      width: double.infinity,
       margin: EdgeInsets.only(bottom: 16.h),
       child: Row(
         children: [

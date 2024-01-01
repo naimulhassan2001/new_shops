@@ -24,8 +24,8 @@ class HomeScreen extends StatelessWidget {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(AppString.deliveryAddress,style: TextStyle(color: Colors.black87, fontSize: 14.sp),),
-            Text(AppString.salatigaCityCentralJava,style: TextStyle(fontSize: 19.sp),)
+            // Text(AppString.deliveryAddress,style: TextStyle(color: Colors.black87, fontSize: 14.sp),),
+            Text(AppString.newShop,style: TextStyle(fontSize: 19.sp),)
           ],
         ),
 

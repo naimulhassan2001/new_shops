@@ -36,7 +36,7 @@ class CheckoutScreen extends StatelessWidget {
                   fontSize: 16.sp,
                 ),
                 const Spacer(),
-                CustomText(title: AppString.salatigaCityCentralJava),
+                CustomText(title: AppString.newShop),
                 const Icon(Icons.keyboard_arrow_down_outlined)
               ],
             ),

@@ -4,7 +4,7 @@ class AppString {
   static const String detailsProduct = "Details Product" ;
   static const String checkouts = "Checkouts" ;
   static const String deliveryTo = "Delivery to" ;
-  static const String salatigaCityCentralJava = "Salatiga City, Central java" ;
+  static const String newShop = "New Shop" ;
   static const String hideList = "hide list" ;
   static const String selectTheDeliveryOption = "select the delivery option" ;
   static const String appleDiscount = "Apple discount" ;
